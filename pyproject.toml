@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zotero-digest"
+version = "0.1.0"
+description = "Daily arXiv email digests ranked by a Zotero collection and keyword filters"
+requires-python = ">=3.11"
+dependencies = [
+  "requests>=2.32.0",
+]
+
+[project.scripts]
+zotero-digest = "zotero_digest.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

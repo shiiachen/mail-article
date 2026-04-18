@@ -1,0 +1,8 @@
+{
+  "keywords": ["diffusion", "molecule", "graph neural network"],
+  "email_to": ["you@example.com"],
+  "arxiv_categories": ["cs.LG", "cs.AI", "q-bio.QM"],
+  "max_results": 10,
+  "lookback_hours": 24,
+  "request_timeout": 30
+}
