@@ -26,16 +26,16 @@ jobs:
 
       - name: Run digest
         env:
-          ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID }}
-          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
+          ZOTERO_USER_ID: ${{ secrets.ZOTERO_USER_ID || secrets.ZOTERO_ID }}
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY || secrets.ZOTERO_KEY }}
           ZOTERO_COLLECTION_KEY: ${{ secrets.ZOTERO_COLLECTION_KEY }}
           KEYWORDS: ${{ secrets.KEYWORDS }}
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          SMTP_USER: ${{ secrets.SMTP_USER || secrets.SENDER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD || secrets.SENDER_PASSWORD }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM || secrets.SENDER }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO || secrets.RECEIVER }}
           ARXIV_CATEGORIES: ${{ secrets.ARXIV_CATEGORIES }}
           MAX_RESULTS: ${{ secrets.MAX_RESULTS }}
           LOOKBACK_HOURS: ${{ secrets.LOOKBACK_HOURS }}
